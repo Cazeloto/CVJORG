@@ -15,6 +15,27 @@ main { width: min(100% - 32px, 760px); min-height: 100vh; margin: 0 auto; paddin
 :root.dark .login-card { background: #0c0c0f; border-color: #27272a; }
 :root.dark .login-intro, :root.dark .login-help { color: #a1a1aa; }
 :root.dark .login-error { color: #fda4af; }
+:root { --brand: #a980ae; --brand-dark: #76527d; --brand-soft: #f3eaf4; --brand-line: #e6d7e8; --brand-ink: #553e5b; }
+:root.dark { --brand: #c29bc8; --brand-dark: #d3b6d8; --brand-soft: #302535; --brand-line: #49394c; --brand-ink: #f1e8f2; }
+.brand-lockup { display: flex; align-items: center; gap: 13px; min-width: 0; }
+.brand-mark { display: block; width: 68px; height: 50px; flex: 0 0 auto; object-fit: cover; object-position: center; border-radius: 12px; }
+.brand-lockup h1 { color: var(--brand-ink); }
+.welcome { background: linear-gradient(135deg, #76527d, #a980ae 78%, #bc9dc0); }
+.welcome .eyebrow { color: #f1e8f2; }
+.home-section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 14px; }
+.home-section-heading .eyebrow { margin-bottom: 5px; color: var(--brand-dark); }
+.section-title { margin: 0; }
+.module-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.module-card { position: relative; min-height: 154px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 17px; border: 1px solid var(--brand-line); border-radius: 18px; background: #fff; color: inherit; box-shadow: 0 2px 8px rgba(85,62,91,.04); }
+.module-card strong { font-size: 17px; }
+.module-card small { color: #71717a; line-height: 1.45; }
+.module-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 13px; background: var(--brand-soft); color: var(--brand-dark); }
+.module-arrow { position: absolute; top: 18px; right: 14px; color: var(--brand-dark); }
+.module-disabled { opacity: .72; }
+.coming-soon { margin-top: auto; padding: 4px 8px; border-radius: 99px; background: var(--brand-soft); color: var(--brand-dark); font-size: 11px; font-weight: 700; }
+.account-bar button:hover, .module-card[href]:hover { border-color: var(--brand); }
+:root.dark .module-card { background: #0c0c0f; }
+:root.dark .module-card small { color: #a1a1aa; }
 .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
 h1, h2, p { margin: 0; }
 h1 { font-size: 32px; letter-spacing: -1px; }
@@ -29,7 +50,7 @@ h2 { font-size: 24px; letter-spacing: -0.5px; }
 .medium-list { display: grid; gap: 10px; }
 .medium-card { width: 100%; min-height: 82px; display: grid; grid-template-columns: 48px minmax(0, 1fr) 20px; align-items: center; gap: 12px; padding: 14px; text-align: left; border: 1px solid #e4e4e7; border-radius: 12px; color: inherit; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.03); transition: transform 160ms ease, border-color 160ms ease; }
 .medium-card:hover { transform: translateY(-1px); border-color: #a1a1aa; }
-.avatar { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; color: #2563eb; background: #eff6ff; }
+.avatar { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; color: var(--brand-dark); background: var(--brand-soft); }
 .medium-summary { min-width: 0; display: grid; gap: 5px; }
 .medium-summary strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .medium-summary small { overflow: hidden; color: #71717a; text-overflow: ellipsis; white-space: nowrap; }
@@ -78,7 +99,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .feature-card { display: grid; grid-template-columns: 48px minmax(0, 1fr) 22px; align-items: center; gap: 16px; padding: 22px 18px; border: 1px solid #e4e4e7; border-radius: 18px; background: #fff; }
 .feature-card strong { display: block; font-size: 20px; margin-bottom: 5px; }
 .feature-card small { display: block; color: #71717a; line-height: 1.5; }
-.back-link { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; margin-bottom: 16px; color: #2563eb; font-size: 14px; }
+.back-link { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; margin-bottom: 16px; color: var(--brand-dark); font-size: 14px; }
 .profile-heading { display: flex; align-items: center; gap: 14px; margin: 8px 0 30px; }
 .profile-heading > div { min-width: 0; }
 .profile-heading h2 { overflow-wrap: anywhere; }

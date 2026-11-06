@@ -2,7 +2,7 @@ import Auth from './Auth'
 import { api } from './api'
 import { format, parseISO } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
-import { ArrowLeft, ChevronRight, Home, Moon, Search, Sun, Users, UserRound, X } from 'lucide-react'
+import { ArrowLeft, ChevronRight, CalendarDays, ClipboardList, Home, Moon, Search, Sun, Users, UserRound, X, Package } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import './App.css'
 
@@ -77,14 +77,19 @@ function App({ email, logout }: { email: string; logout: () => Promise<void> }) 
   const filtered = mediums.filter(medium => normalize(`${name(medium)} ${medium.med_apelido ?? ''}`).includes(normalize(search)))
   return <main>
     <header className="topbar">
-      <div><p className="eyebrow">Casa da Vovó Joaquina</p><h1>{!isMediums ? 'Início' : selectedId ? 'Cadastro do médium' : 'Médiuns'}</h1></div>
+      <div className="brand-lockup"><img className="brand-mark" src="/vovo2.jpg" alt="Casa da Vovó Joaquina" /><div><p className="eyebrow">Casa da Vovó Joaquina</p><h1>{!isMediums ? 'Início' : selectedId ? 'Cadastro do médium' : 'Médiuns'}</h1></div></div>
       <button className="icon-button" type="button" onClick={() => setDark(value => !value)} aria-label="Alternar tema">{dark ? <Sun size={20} /> : <Moon size={20} />}</button>
     </header>
     <div className="account-bar"><span>{email}</span><button type="button" onClick={() => void logout()}>Sair</button></div>
     {!isMediums ? <>
-      <section className="welcome"><span className="home-symbol"><Home size={30} /></span><p className="eyebrow">Bem-vindo à casa</p><h2>Tudo começa por aqui.</h2><p>Acesse as funções da Casa da Vovó Joaquina.</p></section>
-      <h2 className="section-title">O que você deseja acessar?</h2>
-      <a className="feature-card" href="#/mediums"><span className="avatar"><Users size={26} /></span><span><strong>Médiuns</strong><small>Consulte cadastros, orixás e entidades.</small></span><ChevronRight size={22} /></a>
+      <section className="welcome"><p className="eyebrow">Bem-vindo à casa</p><h2>Organização para cuidar do que importa.</h2><p>Consulte a corrente e acompanhe a vida da Casa em um só lugar.</p></section>
+      <div className="home-section-heading"><div><p className="eyebrow">Sua casa</p><h2 className="section-title">Acessos rápidos</h2></div></div>
+      <section className="module-grid" aria-label="Módulos da Casa">
+        <a className="module-card" href="#/mediums"><span className="module-icon"><Users size={22} /></span><strong>Médiuns</strong><small>Cadastros, orixás e entidades</small><ChevronRight className="module-arrow" size={18} /></a>
+        <article className="module-card module-disabled"><span className="module-icon"><CalendarDays size={22} /></span><strong>Calendário</strong><small>Giras e eventos da Casa</small><span className="coming-soon">Em breve</span></article>
+        <article className="module-card module-disabled"><span className="module-icon"><ClipboardList size={22} /></span><strong>Tarefas</strong><small>Preparação e escalas</small><span className="coming-soon">Em breve</span></article>
+        <article className="module-card module-disabled"><span className="module-icon"><Package size={22} /></span><strong>Insumos</strong><small>Materiais e reposição</small><span className="coming-soon">Em breve</span></article>
+      </section>
     </> : <>
       <a className="back-link" href={selectedId ? '#/mediums' : '#/'}><ArrowLeft size={18} />{selectedId ? 'Voltar para médiuns' : 'Voltar ao início'}</a>
       {loading ? <section className="loading-list" aria-label="Carregando">{[1, 2, 3].map(item => <div className="skeleton" key={item} />)}</section> : error ? <section className="state-card error" role="alert"><strong>Cadastro indisponível</strong><span>{error}</span><button className="retry-button" onClick={() => setRetry(value => value + 1)}>Tentar novamente</button></section> : selectedId ? selected ? <>

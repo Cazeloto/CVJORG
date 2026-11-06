@@ -12,13 +12,13 @@ export default defineConfig({
         name: 'Casa da Vovó Joaquina',
         short_name: 'Casa Joaquina',
         description: 'Cadastro de médiums da Casa da Vovó Joaquina',
-        theme_color: '#2563eb',
-        background_color: '#09090b',
+        theme_color: '#a980ae',
+        background_color: '#fbf8fb',
         display: 'standalone',
         start_url: '/',
         icons: [
           {
-            src: '/vite.svg',
+            src: '/icons.svg',
             sizes: 'any',
             type: 'image/svg+xml',
             purpose: 'any maskable',
