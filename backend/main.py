@@ -130,3 +130,8 @@ def list_mediums(search: str = Query(default="", max_length=120)) -> dict[str, A
             for row in rows
         ],
     }
+
+
+# Register after API routes so static serving cannot override authentication.
+if os.getenv("STATIC_DIR"):
+    app.mount("/", StaticFiles(directory=os.environ["STATIC_DIR"], html=True), name="frontend")
