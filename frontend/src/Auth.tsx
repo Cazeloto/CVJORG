@@ -52,7 +52,7 @@ export default function Auth({ children }: { children: (user: User, logout: () =
       <label htmlFor="login-email">E-mail</label>
       <input id="login-email" type="email" autoComplete="username" autoCapitalize="none" spellCheck={false} required maxLength={254} value={email} onChange={event => setEmail(event.target.value)} />
       <label htmlFor="login-password">Senha</label>
-      <input id="login-password" type="password" autoComplete="current-password" required maxLength={256} value={password} onChange={event => setPassword(event.target.value)} />
+      <input id="login-password" type="password" autoComplete="current-password" required minLength={6} maxLength={256} value={password} onChange={event => setPassword(event.target.value)} />
       {error && <p className="login-error" role="alert">{error}</p>}
       <button className="login-submit" disabled={busy} type="submit">{busy ? 'Entrando…' : 'Entrar'}</button>
     </form>

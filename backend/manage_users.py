@@ -17,9 +17,9 @@ def main():
     email = normalize_email(input('E-mail: '))
     password_hash = None
     if args.action in {'create', 'reset'}:
-        password = getpass('Senha (mínimo 12 caracteres): ')
-        if not 12 <= len(password) <= 256:
-            raise ValueError('Use entre 12 e 256 caracteres.')
+        password = getpass('Senha (mínimo 6 caracteres): ')
+        if not 6 <= len(password) <= 256:
+            raise ValueError('Use entre 6 e 256 caracteres.')
         if password != getpass('Confirme a senha: '):
             raise ValueError('As senhas não coincidem.')
         password_hash = hash_password(password)

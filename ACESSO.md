@@ -11,7 +11,7 @@ No PowerShell, dentro de `C:\CVJORG`, com `backend/.env` configurado:
 .\.venv\Scripts\python.exe -m backend.manage_users create
 ```
 
-O segundo comando solicita e-mail e senha (mínimo de 12 caracteres). A senha não aparece ao digitar. Não informe senhas pelo chat. `init` cria somente as tabelas `cvj_users`, `cvj_sessions` e `cvj_login_limits`, sem modificar os cadastros existentes.
+O segundo comando solicita e-mail e senha (mínimo de 6 caracteres). A senha não aparece ao digitar. Não informe senhas pelo chat. `init` cria somente as tabelas `cvj_users`, `cvj_sessions` e `cvj_login_limits`, sem modificar os cadastros existentes.
 
 Para trocar uma senha ou desativar uma conta:
 

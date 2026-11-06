@@ -59,7 +59,7 @@ def init_auth(connect):
 
 class Login(BaseModel):
     email: str = Field(max_length=254)
-    password: str = Field(min_length=1, max_length=256)
+    password: str = Field(min_length=6, max_length=256)
 
     @field_validator('email')
     @classmethod
