@@ -1,0 +1,16 @@
+:root {
+  font-family: 'DM Sans', Inter, system-ui, sans-serif;
+  color: #09090b;
+  background: #f4f4f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+:root.dark {
+  color: #fafafa;
+  background: #09090b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input { font: inherit; }
+button { cursor: pointer; }
